@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Learning Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="ambient-glow"></div>
+
+    <div class="portal-container">
+        <aside class="sidebar">
+            <div class="portal-brand">
+                <h2><span>//</span> DSA Portal</h2>
+            </div>
+            <nav class="matrix-menu">
+                <div class="menu-category">Data Structures</div>
+                <button class="menu-tab active" onclick="switchDS('stack')">Stack Operations</button>
+                <button class="menu-tab" onclick="switchDS('queue')">Queue Operations</button>
+                <button class="menu-tab" onclick="switchDS('list')">Linked List</button>
+                <button class="menu-tab" onclick="switchDS('tree')">Binary Search Tree</button>
+                <button class="menu-tab" onclick="switchDS('graph')">Graph Network</button>
+                
+                <div class="menu-category">Algorithms</div>
+                <button class="menu-tab" onclick="switchDS('sort')">Sorting</button>
+                <button class="menu-tab" onclick="switchDS('search')">Searching</button>
+            </nav>
+        </aside>
+
+        <main class="workspace">
+            <header class="workspace-header">
+                <h1 id="portal-title">Stack Memory Unit</h1>
+                <p>Interactive algorithm compilation and analysis module</p>
+            </header>
+
+            <section class="control-console-center">
+                <div class="mega-input-group">
+                    <input type="number" id="primary-input" class="large-input" placeholder="Enter Value" min="1" max="99">
+                    <select id="algo-selector" class="large-input hidden"></select>
+                </div>
+                <div class="mega-btn-group">
+                    <button id="btn-insert" class="btn-mega btn-glow-cyan" onclick="triggerInsert()">Push Element</button>
+                    <button id="btn-peek" class="btn-mega btn-glow-yellow" onclick="triggerPeek()">Peek Top</button>
+                    <button id="btn-delete" class="btn-mega btn-glow-magenta" onclick="triggerDelete()">Pop Element</button>
+                    <button class="btn-mega btn-neutral" onclick="resetCurrentStructure()">Reset Vector</button>
+                </div>
+            </section>
+
+            <section class="simulation-grid">
+                <div class="viewport-screen">
+                    <div id="canvas" class="canvas"></div>
+                </div>
+
+                <div class="telemetry-panel">
+                    <h3>Algorithmic Analysis & Logs</h3>
+                    <div class="telemetry-terminal">
+                        <div id="explanation-text" class="terminal-text">
+                            System initialized. Ready for operations.
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
