@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DSA Learning Portal</title>
+    <title>DSA Portal</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -30,37 +30,58 @@
 
         <main class="workspace">
             <header class="workspace-header">
-                <h1 id="portal-title">Stack Memory Unit</h1>
-                <p>Interactive algorithm compilation and analysis module</p>
+                <div class="header-title-area">
+                    <h1 id="portal-title">Stack Memory Unit</h1>
+                    <p>Interactive core compilation, analytical visualizer, and dynamic module</p>
+                </div>
+                
+                <div class="category-toggle-container">
+                    <button id="tab-visualizer" class="category-btn active" onclick="switchCategoryMode('visualizer')">Visualizer & Operations</button>
+                    <button id="tab-theory" class="category-btn" onclick="switchCategoryMode('theory')">Theory</button>
+                </div>
             </header>
 
-            <section class="control-console-center">
-                <div class="mega-input-group">
-                    <input type="number" id="primary-input" class="large-input" placeholder="Enter Value" min="1" max="99">
-                    <select id="algo-selector" class="large-input hidden"></select>
-                </div>
-                <div class="mega-btn-group">
-                    <button id="btn-insert" class="btn-mega btn-glow-cyan" onclick="triggerInsert()">Push Element</button>
-                    <button id="btn-peek" class="btn-mega btn-glow-yellow" onclick="triggerPeek()">Peek Top</button>
-                    <button id="btn-delete" class="btn-mega btn-glow-magenta" onclick="triggerDelete()">Pop Element</button>
-                    <button class="btn-mega btn-neutral" onclick="resetCurrentStructure()">Reset Vector</button>
-                </div>
-            </section>
+            <div id="category-visualizer-view" class="category-content-pane">
+                <section class="control-console-center">
+                    <div class="mega-input-group">
+                        <input type="number" id="primary-input" class="large-input" placeholder="Enter Value" min="1" max="99">
+                        <select id="algo-selector" class="large-input hidden"></select>
+                    </div>
+                    <div class="mega-btn-group">
+                        <button id="btn-insert" class="btn-mega btn-glow-cyan" onclick="triggerInsert()">Push Element</button>
+                        <button id="btn-peek" class="btn-mega btn-glow-yellow" onclick="triggerPeek()">Peek Top</button>
+                        <button id="btn-delete" class="btn-mega btn-glow-magenta" onclick="triggerDelete()">Pop Element</button>
+                        <button class="btn-mega btn-neutral" onclick="resetCurrentStructure()">Reset Vector</button>
+                    </div>
+                </section>
 
-            <section class="simulation-grid">
-                <div class="viewport-screen">
-                    <div id="canvas" class="canvas"></div>
-                </div>
+                <section class="simulation-grid">
+                    <div class="viewport-screen">
+                        <div id="canvas" class="canvas"></div>
+                    </div>
 
-                <div class="telemetry-panel">
-                    <h3>Algorithmic Analysis & Logs</h3>
-                    <div class="telemetry-terminal">
-                        <div id="explanation-text" class="terminal-text">
-                            System initialized. Ready for operations.
+                    <div class="telemetry-panel">
+                        <h3>Execution Engine Logs</h3>
+                        <div class="telemetry-terminal">
+                            <div id="explanation-text" class="terminal-text">
+                                System initialized. Select any structure to begin tracking trace matrices.
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
+
+            <div id="category-theory-view" class="category-content-pane hidden">
+                <section class="independent-theory-section">
+                    <div class="theory-header-bar">
+                        <h3>Theory Overview</h3>
+                    </div>
+                    <div class="theory-content-viewport">
+                        <div id="theory-content" class="theory-body-text">
+                            </div>
+                    </div>
+                </section>
+            </div>
         </main>
     </div>
     <script src="script.js"></script>
